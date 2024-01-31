@@ -1,16 +1,15 @@
-apiVersion: batch/v1
-kind: Job
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
 metadata:
-  name: before
+  name: holder
   namespace: {{ .Values.namespace }}
   annotations:
     argocd.argoproj.io/hook: PreSync
 spec:
-  template:
-    spec:
-      containers:
-      - name: sleep
-        image: alpine:latest
-        command: ["sleep", "10"]
-      restartPolicy: Never
-  backoffLimit: 0
+  entrypoint: main
+  templates:
+  - name: main
+    container:
+      image: docker/whalesay:latest
+      command: [sh, "-c", "for I in $(seq 1 1000) ; do echo $I ; sleep 1s; done"]
+
