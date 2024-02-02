@@ -82,7 +82,7 @@ autoscaling:
 
 # Additional volumes on the output Deployment definition.
 volumes:
-  - name: default.conf
+  - name: nginx-default-conf
     configMap:
       name: nginx-config
       items:
@@ -90,7 +90,7 @@ volumes:
           path: default.conf
   - name: html
     configMap:
-      name: nginx-config
+      name: nginx-html-index
       items:
         - key: index.html
           path: index.html
@@ -102,10 +102,11 @@ volumes:
 
 # Additional volumeMounts on the output Deployment definition.
 volumeMounts:
- - name: default.conf
+ - name: nginx-default-conf
    mountPath: "/etc/nginx/conf.d"
- - name: index.html
+ - name: nginx-html-index
    mountPath: "/usr/share/nginx/html"
+
 nodeSelector: {}
 
 tolerations: []
