@@ -144,3 +144,6 @@ nginx:
       <h1>stuff</h1>
       </body>
     </html>
+
+argoworkflow:
+  enabled: false
