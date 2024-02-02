@@ -88,9 +88,9 @@ volumes:
       items:
         - key: default.conf
           path: default.conf
-  - name: html
+  - name: nginx-html-index
     configMap:
-      name: nginx-html-index
+      name: nginx-config
       items:
         - key: index.html
           path: index.html
