@@ -10,7 +10,7 @@ image:
   repository: nginx
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: latest
+  tag: 1.24
 
 imagePullSecrets: []
 nameOverride: ""
@@ -147,4 +147,5 @@ nginx:
     </html>
 
 argoworkflow:
-  enabled: true
+  enabled: false
+
