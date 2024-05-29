@@ -149,7 +149,7 @@ nginx:
 argoworkflow:
   enabled: false
 
-keb:
+echo-server:
   runtimeConfiguration: |-
     own_cluster:
       kyma-template: |-
