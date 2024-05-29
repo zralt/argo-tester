@@ -60,3 +60,13 @@ Create the name of the service account to use
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
 {{- end }}
+
+{{- define "avs.utils.joinTags" -}}
+{{- $local := dict "first" true -}}
+{{- $data := (printf "%s:\n%s" "tags" .) | fromYaml -}}
+{{- range $tag := $data.tags -}}
+{{- if not $local.first -}},{{- end -}}
+{{ printf "{%q,%v,%q}" $tag.content $tag.tag_id $tag.tag_name }}
+{{- $_ := set $local "first" false -}}
+{{- end -}}
+{{- end -}}
