@@ -183,3 +183,11 @@ echo-server:
 
 metadata:
   x: y
+
+randomKey: |-
+  a: 1
+  metadata:
+    label:
+      b: 2
+
+
