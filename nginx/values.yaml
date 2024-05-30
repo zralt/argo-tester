@@ -150,6 +150,14 @@ argoworkflow:
   enabled: false
 
 echo-server:
+  randomKey: |-
+    something:
+      default: |-
+        a: 1
+        metadata:
+          labels:
+            b: 2
+    
   runtimeConfiguration: |-
     own_cluster:
       kyma-template: |-
@@ -192,4 +200,3 @@ randomKey: |-
         labels:
           b: 2
     
-
