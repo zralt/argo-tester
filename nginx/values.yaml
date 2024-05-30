@@ -149,54 +149,18 @@ nginx:
 argoworkflow:
   enabled: false
 
-echo-server:
-  randomKey: |-
-    something:
-      default: |-
-        a: 1
-        metadata:
-          labels:
-            b: 2
-    
-  runtimeConfiguration: |-
-    own_cluster:
-      kyma-template: |-
-        apiVersion: operator.kyma-project.io/v1beta2
-        kind: Kyma
-        metadata:
-          labels:
-            "operator.kyma-project.io/managed-by": "lifecycle-manager"
+runtimeConfiguration: |-
+  own_cluster:
+    kyma-template: |-
+      apiVersion: operator.kyma-project.io/v1beta2
+      kind: Kyma
+      metadata:
+        labels:
+          "operator.kyma-project.io/managed-by": "lifecycle-manager"
         name: tbd
         namespace: kcp-system
       spec:
         channel: fast
         modules: []
-      additional-components: []
-    default:
-      kyma-template: |-
-        apiVersion: operator.kyma-project.io/v1beta2
-        kind: Kyma
-        metadata:
-          labels:
-            "operator.kyma-project.io/managed-by": "lifecycle-manager"
-        name: tbd
-        namespace: kcp-system
-      spec:
-        channel: fast
-        modules:
-          - name: api-gateway
-          - name: istio
-          - name: btp-operator
-      additional-components: []
+        additional-components: []
 
-metadata:
-  x: y
-
-randomKey: |-
-  something:
-    default:
-      a: 1
-      metadata:
-        labels:
-          b: 2
-    
