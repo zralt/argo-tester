@@ -181,3 +181,5 @@ echo-server:
           - name: btp-operator
       additional-components: []
 
+metadata:
+  x: y
