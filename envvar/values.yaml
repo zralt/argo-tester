@@ -10,6 +10,7 @@ runtimeConfiguration: |-
         name: tbd
         namespace: kcp-system
       spec:
+        kind: whteve
         channel: fast
         modules: []
         additional-components: []
