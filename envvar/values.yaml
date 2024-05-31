@@ -1,0 +1,18 @@
+kind: Kyma
+
+metadata:
+  labels:
+    "operator.kyma-project.io/managed-by": "lifecycle-manager"
+
+apiVersion: operator.kyma-project.io/v1beta2
+
+runtimeConfiguration: |-
+  own_cluster:
+    kyma-template: |-
+        name: tbd
+        namespace: kcp-system
+      spec:
+        channel: fast
+        modules: []
+        additional-components: []
+
