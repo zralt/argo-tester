@@ -1,5 +1,3 @@
-kind: Kyma
-
 metadata:
   labels:
     "operator.kyma-project.io/managed-by": "lifecycle-manager"
